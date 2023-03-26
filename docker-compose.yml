@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  streaming-server:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    container_name: nginx-rtmp-server
+    volumes:
+      - ./mounts/:/tmp/hls/
+    ports:
+      - "1935:1935"
+      - "8080:8080"
